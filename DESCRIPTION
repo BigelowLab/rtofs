@@ -1,0 +1,19 @@
+Package: rtofs
+Type: Package
+Title: OPeNDAP access to rtofs data
+Version: 1.0
+Date: 2019-04-30
+Author: Ben Tupper <btupper@bigelow.org>
+Maintainer: Ben Tupper <btupper@bigelow.org>
+Description: Provides simplified access to OPeNDAP rtofs data served by NCEP thredds server.
+URL: https://github.com/BigelowLab/rtofs
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 3.0)
+Imports:
+    methods,
+    sp,
+    ncdf4,
+    raster
+RoxygenNote: 6.1.1
