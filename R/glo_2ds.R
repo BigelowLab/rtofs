@@ -18,6 +18,12 @@ daily_glo2ds_uri <- function(date = Sys.Date() - 1,
     file.path(root, base)
 }
 
+
+#' Open a connection to an OPeNDAP resource
+#'
+#' @export
+#' @param uri character, uri for an opendap resource
+#' @return ncdf4 object or NULL
 rtofs_daily_glo2ds <- function(uri = daily_glo2ds_uri()){
     tryCatch(
         expr = {ncdf4::nc_open(uri)},
