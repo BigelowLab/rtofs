@@ -4,8 +4,13 @@
 \alias{rtofs_glo2ds_nav}
 \title{Compute the elements for navigating ncfd4 array extraction}
 \usage{
-rtofs_glo2ds_nav(NC, bb = c(-72, -63, 39, 46), level = 1,
-  layers = seq_len(NC$dim$time$len), offset = 360)
+rtofs_glo2ds_nav(
+  NC,
+  bb = c(-72, -63, 39, 46),
+  level = 1,
+  layers = seq_len(NC$dim$time$len),
+  offset = 360
+)
 }
 \arguments{
 \item{NC}{ncdf4 class object}

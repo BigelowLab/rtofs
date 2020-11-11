@@ -1,7 +1,7 @@
 # rtofs
 
 Provides simplified access to OPeNDAP [Real-time Ocean Forecast System](https://polar.ncep.noaa.gov/global/nc/) 
-(rtofs) data served by the [NOMADS OPeNDAP server](https://nomads.ncep.noaa.gov:9090/dods/rtofs).
+(rtofs) data served by the [NOMADS OPeNDAP server](https://nomads.ncep.noaa.gov/).
 
 ## Requirements
 

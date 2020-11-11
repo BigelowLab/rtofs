@@ -1,3 +1,14 @@
+#' Retrieve the root URI for the NOMADS NCEP rtofs resources
+#'
+#' @export
+#' @param what character, one of "info" or "opendap" (default)
+#' @return a URI
+rtofs_root_uri <- function(what = c("info", "opendap")[2]){
+    switch(tolower(what[1]),
+           "opendap" = "http://nomads.ncep.noaa.gov:80/dods/rtofs",
+                       "https://nomads.ncep.noaa.gov/")
+}
+
 #' Retrieve the daily GLobal RTOFS glo2ds uri for the specifed date.  There is no test to
 #' determine if the uri points to a valid resource.
 #'
@@ -11,8 +22,11 @@
 daily_glo2ds_uri <- function(date = Sys.Date() - 1,
                              when = c("forecast", "nowcast")[1],
                              what = c("prog", "diag")[1],
-                             root = "https://nomads.ncep.noaa.gov:9090/dods/rtofs"){
+                             root = rtofs_root_uri(what = "opendap")){
 
+
+    # http://nomads.ncep.noaa.gov:80/dods/rtofs/rtofs_global20201110/rtofs_glo_2ds_forecast_daily_diag
+    # [            root                       ]/[   path           ]/[           filename            ]
     if (inherits(date, "Date") | inherits(date, "POSIXt")) date <- format(date, "%Y%m%d")
     base <- sprintf("rtofs_global%s/rtofs_glo_2ds_%s_daily_%s", date[1], tolower(when[1]), tolower(what[1]))
     file.path(root, base)

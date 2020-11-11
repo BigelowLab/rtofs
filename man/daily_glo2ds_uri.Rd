@@ -5,9 +5,12 @@
 \title{Retrieve the daily GLobal RTOFS glo2ds uri for the specifed date.  There is no test to
 determine if the uri points to a valid resource.}
 \usage{
-daily_glo2ds_uri(date = Sys.Date() - 1, when = c("forecast",
-  "nowcast")[1], what = c("prog", "diag")[1],
-  root = "https://nomads.ncep.noaa.gov:9090/dods/rtofs")
+daily_glo2ds_uri(
+  date = Sys.Date() - 1,
+  when = c("forecast", "nowcast")[1],
+  what = c("prog", "diag")[1],
+  root = rtofs_root_uri(what = "opendap")
+)
 }
 \arguments{
 \item{date}{character, Date or POSIXt, the date to retrieve, by default yesterday as Date class.
